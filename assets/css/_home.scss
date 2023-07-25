@@ -263,13 +263,15 @@
 
 @media(max-width: 450px) {
    .banner {
-
+      .banner__slider__body {
+         margin-top: 250px;
+      }
       &__sliders {
        
    
          .slick-dots {
 
-            top: 45%;
+          
    
          }}}   
    .banner__slider__body__btns {
@@ -290,7 +292,7 @@
             font-size: 20px;
          }
          .slick-dots {
-            top: 40% !important;
+            top: 50% !important;
        
             transform: translateX(-50%);
  
