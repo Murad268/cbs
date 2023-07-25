@@ -1,0 +1,138 @@
+* {
+   margin: 0 ;
+   padding: 0 ;
+   box-sizing: border-box;
+}
+a {
+   text-decoration: none;
+}
+ul, ol {
+   list-style-type: none;
+}
+.container {
+   max-width: 1160px;
+   margin: 0 auto;
+}
+
+.section__title {
+   color: var(--main-dark);
+   font-family: var(--gotham);
+   font-size: 34px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: 0.085px;
+}
+
+
+.section__desc {
+   color: var(--desc-color);
+   font-family: var(--gotham);
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 26px;
+   /* 162.5% */
+   letter-spacing: 0.32px;
+}
+
+.main__title {
+   color: var(--main-white);
+   font-family: var(--gotham);
+   font-size: 48px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+}
+
+.card__title {
+   color: var(--main-dark);
+   font-family: var(--gotham);
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 350;
+   line-height: normal;
+}
+
+.filter {
+   color: var(--main-dark);
+   font-family: var(--gotham);
+   font-size: 15px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: 0.188px;
+   text-transform: uppercase;
+}
+
+.section__main__title {
+   color: var(--main-white);
+   font-family: var(--gotham);
+   font-size: 34px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: 0.085px;
+}
+
+.btn_withBg{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 160px;
+   height: 40px;
+   flex-shrink: 0;
+   border-radius: 4px;
+   background: var(--main-blue);
+   color: var(--main-white);
+   text-align: center;
+   font-family: var(--gotham);
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 350;
+   line-height: normal;
+   letter-spacing: 0.15px;
+   text-transform: uppercase;
+}
+
+.btn__withoutBg {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 160px;
+   height: 40px;
+   flex-shrink: 0;
+   border-radius: 4px;
+   border: 1px solid var(--main-white);
+   color: var(--main-white);
+   text-align: center;
+   font-family: var(--gotham);
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 350;
+   line-height: normal;
+   letter-spacing: 0.15px;
+   text-transform: uppercase;
+}
+
+.contact_-desc {
+   color: var(--main-dark);
+   font-family: var(--gotham);
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 26px; 
+   letter-spacing: 0.32px;
+}
+
+.form-check-input {
+   background-color: inherit !important;
+   border-color: var(--main-white) !important;
+}
+
+
+@media(max-width: 1160px) {
+   .container {
+      padding: 0 20px 
+   }
+}
