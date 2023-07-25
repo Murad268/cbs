@@ -293,6 +293,18 @@
       }
    }
 }
+
+@media(max-width: 420px) {
+   .banner {
+      &__sliders {
+         position: relative;
+
+         .slick-dots {
+            top: 27%;
+       
+
+         }}}
+}
 @media(max-width: 300px) {
    .banner {
 
