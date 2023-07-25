@@ -79,6 +79,7 @@
 
 
 .services {
+   margin-top: -200px;
    padding: 80px 0;
    .btn__withoutBg {
       color: var(--main-dark);
@@ -172,6 +173,8 @@
    margin-top: 64px;
    display: flex;
    flex-wrap: wrap;
+   gap: 30px;
+   justify-content: flex-start;
    justify-content: space-between;
    a {
       text-decoration: none;
@@ -202,8 +205,11 @@
    }
 }
 @media(max-width: 820px) {
-   .banner {
 
+   .banner {
+      &__slider {
+
+      }
       &__sliders {
          position: relative;
 
@@ -233,7 +239,14 @@
             max-width: 100%;
             background: var(--body-text, #4C5562);
             padding: 104px 40px 64px 40px;
-
+            &__btns {
+               width: max-content;
+               margin: 54px auto 0 auto;
+               a {
+              
+                 padding: 20px;
+               }
+            }
             .main__title {
                font-size: 24px;
                font-weight: 350;
@@ -262,20 +275,17 @@
 }
 
 @media(max-width: 450px) {
+   .portfolio__wrapper {
+      grid-template-columns: 1fr;
+   }
    .banner {
       .banner__slider__body {
          margin-top: 250px;
       }
-      &__sliders {
-       
-   
-         .slick-dots {
-
-          
-   
-         }}}   
+  }   
    .banner__slider__body__btns {
       flex-direction: column;
+      width: 100%;
       row-gap: 10px;
       a {
          width: 100%;
@@ -298,6 +308,15 @@
  
       
             }
+         }
+      }
+
+      .services {
+         &__item {
+            width: 100%;
+         }
+         &__wrapper {
+            grid-template-columns: 1fr;
          }
       }
 }
