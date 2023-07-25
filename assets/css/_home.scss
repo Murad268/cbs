@@ -79,7 +79,7 @@
 
 
 .services {
-   margin-top: -200px;
+
    padding: 80px 0;
    .btn__withoutBg {
       color: var(--main-dark);
@@ -194,6 +194,7 @@
 }
 @media(max-width: 991px) {
    .services {
+ 
       &__top {
          flex-direction: column;
          row-gap: 14px;
@@ -205,7 +206,9 @@
    }
 }
 @media(max-width: 820px) {
-
+   .services {
+      margin-top: -200px;
+   }
    .banner {
       &__slider {
 
