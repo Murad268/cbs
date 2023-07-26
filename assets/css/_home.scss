@@ -192,20 +192,75 @@
 .choseus{
    padding-top: 84px;
    &__slider {
-      overflow: hidden;
-   
+      height: 410px;
+      overflow-x: hidden;
+      &__dot {
+         width: 100%;
+         position: absolute;
+         bottom: -70px;
+         left: 0;
+         background: var(--main-white);
+         
+         &__name {
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: var(--gotham);
+            font-size: 20px;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.024px;
+         }
+         &__position {
+            color: var(--main-dark);
+            text-align: center;
+
+            font-family: var(--gotham);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: 0.32px;
+         }
+         &__img {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -50px;
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+      }
+      &__dots {
+      
+         width: 100%;
+         &__inner {
+            display: flex;
+         }
+      }
       .section__desc {
          color: var(--main-white)
       }
      &__comments {
-      display: flex;
+      padding: 0 84px;
       justify-content: center;
       align-items: center;
-      padding: 0 87px;
+      padding: 0 84px;
       height: 300px;
       background: var(--body-text, #4C5562);
       position: relative;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &__inner {
          display: flex;
          width: max-content;
@@ -233,7 +288,7 @@
    }
    &__icons {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       row-gap: 132px;
    }
    &__icon {
@@ -241,18 +296,87 @@
       height: 23.442px;
       flex-shrink: 0;
       img {
-         width: 100%;
-         height: 100%;
+         width: 90%;
+         height: 90%;
          object-fit: cover;
+         margin: 0 auto;
       }
    }
 }
+.choseus__slider {
+   position: relative;
+}
 
+.comments__dots {
+   display: flex;
+   position: absolute;
+   width: max-content;
+   bottom: 0;
+   transform: translateX(-50%);
+   left: 50%;
+   column-gap: 5px
+}
+.comments__dot {
+   width: 15px;
+   height: 15px;
+   border-radius: 100%;
+   background: gray;
+   cursor: pointer;
+   &.active {
+      background: black
+   }
+}
 
+.process {
+   padding: 80px 0;
+   .card__title {
+      margin-top: 24px;
+   }
+   .section__desc {
+      margin-top: 4px;
+   }
 
-
-
+   &__wrapper {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 90px;
+   }
+}
+.still {
+   padding: 100px 0;
+   &__body {
+      max-width: 880px;
+      text-align: justify;
+   }
+   .section__desc {
+      margin-top: 8px;
+      color: var(--main-white) !important;
+      margin-bottom: 24px;
+   }
+   width: 100%;
+   background: var(--main-dark);
+   box-shadow: var(--dark-opacity-bix-shadow);
+}
 @media(max-width: 991px) {
+   .choseus__icons {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 70px;
+      margin: 0 auto;
+      width: max-content;
+   }
+   .choseus__slider__comments__inner {
+      height: 450px;
+   }
+   .choseus__wrapper {
+      flex-direction: column;
+      row-gap: 90px;
+      .comments__dots {
+         bottom: 40px;
+     
+      }
+     
+   }
    .services {
  
       &__top {
@@ -336,7 +460,12 @@
          }
       }
 }
-
+@media(max-width: 550px) {
+   .choseus__icons {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 90px
+   }
+}
 @media(max-width: 450px) {
    .portfolio__wrapper {
       grid-template-columns: 1fr;
@@ -358,6 +487,11 @@
 }
 
 @media(max-width: 420px) {
+   .choseus {
+      .section__desc {
+         font-size: 12px;
+      }
+   }
    .banner {
       &__sliders {
          position: relative;
@@ -367,6 +501,12 @@
        
 
          }}}
+}
+@media(max-width: 350px) {
+   .choseus__icons {
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 90px
+   }
 }
 @media(max-width: 300px) {
    .banner {

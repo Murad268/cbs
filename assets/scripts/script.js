@@ -4,41 +4,65 @@ $('.banner__sliders').slick({
 	dots: true,
 })
 
-const wrapper = document.querySelector('.choseus__slider')
-const slides = document.querySelectorAll('.choseus__slider__comments')
-const inner = document.querySelector('.choseus__slider__comments__inner')
-let wrapperWidth = wrapper.clientWidth
-let offset = 0
+const getWrapperWidth = () => document.querySelector('.choseus__slider').clientWidth;
 
+const slides = document.querySelectorAll('.choseus__slider__comments');
+const inner = document.querySelector('.choseus__slider__comments__inner');
+const dots = document.querySelectorAll('.comments__dot');
 
-const nextFunction = () => {
-	if (offset < wrapperWidth * (slides.length - 1)) {
-		offset += wrapperWidth
-	} else {
-		offset = 0
-	}
+let wrapperWidth = getWrapperWidth();
+let offset = 0;
 
-	inner.style.transform = `translateX(-${offset}px)`
-}
+const updateSlider = () => {
+  inner.style.transform = `translateX(-${offset}px)`;
+};
 
-const leftFunction = () => {
-	if (offset > 0) {
-		offset -= wrapperWidth;
-	} else {
-		offset = wrapperWidth * (slides.length - 1);
-	}
+const updateActiveDot = () => {
+  dots.forEach(dot => dot.classList.remove('active'));
+  const activeDotIndex = Math.floor(offset / wrapperWidth);
+  dots[activeDotIndex].classList.add('active');
+};
 
-	inner.style.transform = `translateX(-${offset}px)`;
-}
+const handleSlideChange = (direction) => {
+  if (direction === 'next') {
+    offset += wrapperWidth;
+  } else if (direction === 'prev') {
+    offset -= wrapperWidth;
+  }
 
+  if (offset < 0) {
+    offset = wrapperWidth * (slides.length - 1);
+  } else if (offset >= wrapperWidth * slides.length) {
+    offset = 0;
+  }
+
+  updateSlider();
+  updateActiveDot();
+};
 
 slides.forEach((slide) => {
-	
-	slide.style.width = wrapperWidth + 'px'
-   const hammer = new Hammer(slide)
+  slide.style.width = wrapperWidth + 'px';
+  const hammer = new Hammer(slide);
 
-	// Swipe left (sola doğru swipe) olayını dinlemek için bir işlev tanımlayın
-	hammer.on('swipeleft', nextFunction)
-   hammer.on('swiperight', leftFunction)
-})
+  hammer.on('swipeleft', () => handleSlideChange('next'));
+  hammer.on('swiperight', () => handleSlideChange('prev'));
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    dots.forEach(item => item.classList.remove('active'));
+    dot.classList.add('active');
+
+    offset = index * wrapperWidth;
+    updateSlider();
+  });
+});
+
+window.addEventListener('resize', () => {
+  wrapperWidth = getWrapperWidth();
+  offset = 0; // Reset the offset to the first slide on resize
+  slides.forEach(slide => slide.style.width = wrapperWidth + 'px');
+  updateSlider();
+  updateActiveDot();
+});
 
