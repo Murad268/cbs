@@ -358,6 +358,171 @@
    background: var(--main-dark);
    box-shadow: var(--dark-opacity-bix-shadow);
 }
+
+.our__team {
+
+   &__main {
+      position: relative;
+   }
+   .next-button {
+      position: absolute;
+      right: -30px;
+      font-size: 25px;
+      top: 25%;
+      transform: translateY(50%);
+      background: transparent;
+      cursor: pointer;
+   }
+   .prev-button {
+      position: absolute;
+      left: -30px;
+      font-size: 25px;
+      top: 25%;
+      transform: translateY(50%);
+      background: transparent;
+      cursor: pointer;
+   }
+   padding: 97px 0;
+   &__wrapper {
+      margin: 0 -35px;
+      margin-top: 64px;
+   }
+   &__column {
+      margin: 0 35px ;
+      &__img {
+         height: 240px;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+      &__name {
+         color: var(--main-dark);
+         font-family: var(--gotham);
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+         letter-spacing: 0.03px;
+         margin-top: 32px;
+      }
+      &__position {
+         color: var(--main-blue);
+         font-family: Gotham;
+         font-size: 15px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 22px; /* 146.667% */
+         letter-spacing: 0.038px;
+         margin-top: 6px;
+      }
+   }
+}
+.contact {
+   &__form {
+      &>div {
+         display: flex;
+         flex-direction: column;
+         row-gap: 1px;
+      }
+   }
+   .header__top__right__links {
+      ul {
+         margin-left: -30px;
+         a {
+            text-decoration: none;
+            font-size: 30px !important;
+         }
+      }
+      li {
+         width: 30px;
+         height: 30px;
+         background: var(--main-dark);
+         font-size: 20px;
+      }
+   }
+   &__body {
+      font-family: var(--gotham);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+      letter-spacing: 0.32px;
+   }
+   &__footer {
+      display: flex;
+      margin-top: 24px;
+      justify-content: space-between;
+      &__phone {
+         div {
+            margin-bottom: 5px;
+         }
+      }
+      strong {
+         display: block;
+         margin-bottom: 15px;
+      }
+   }
+   .section__title {
+      margin-bottom: 64px;
+   }
+   &__wrapper {
+    display: flex;
+    column-gap: 99px;
+    button {
+      border: none;
+      margin-top: 40px;
+    }
+      label {
+         color: var(--main-dark);
+         font-family: var(--gotham);
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 23px; /* 143.75% */
+         letter-spacing: 0.24px;
+      }
+      input {
+         border-radius: 3px;
+         border: 1.2px solid #C4C4C4;
+         border-radius: 3px;
+         height: 40px;
+         margin-bottom: 24px;
+      }
+      textarea {
+         border: 1.2px solid #C4C4C4;
+         height: 120px;
+         border-radius: 3px;
+      }
+   }
+   &__info {
+      flex: 1;
+   }
+   &__form {
+      flex: 1;
+   }
+}
+
+@media(max-width: 1050px) {
+   .our__team {
+      overflow: hidden !important;
+      .next-button {
+         right: -24px !important;
+      }
+      .prev-button {
+         left: -24px !important;
+      }
+      &__team__wrapper {
+         overflow: hidden !important;
+         margin: 0 
+      }
+      &__team__column {
+         margin: 0 20px;
+      }
+   }
+ 
+}
 @media(max-width: 991px) {
    .choseus__icons {
       grid-template-columns: repeat(3, 1fr);
@@ -394,9 +559,7 @@
       margin-top: -200px;
    }
    .banner {
-      &__slider {
-
-      }
+  
       &__sliders {
          position: relative;
 
@@ -460,7 +623,25 @@
          }
       }
 }
+@media(max-width: 760px) {
+  .contact {
+   &__wrapper {
+      flex-direction: column;
+      row-gap: 80px
+   }
+   &__footer{
+      flex-direction: column;
+      row-gap: 50px;
+   }
+  }
+}
 @media(max-width: 550px) {
+   .still {
+      .main__title {
+         font-size: 20px;
+         align-items: left !important;
+      }
+   }
    .choseus__icons {
       grid-template-columns: repeat(2, 1fr);
       column-gap: 90px
@@ -503,6 +684,22 @@
          }}}
 }
 @media(max-width: 350px) {
+   .contact__footer__phone {
+      div {
+         width: 100%;
+      }
+   }
+   .choseus__slider__comments__quote1 {
+      top: 10px;
+      left: 0;
+   }
+   .choseus__slider__comments__quote2 {
+      bottom: 20px;
+      right: 0;
+   }
+   .services__wrapper, .process__wrapper {
+      grid-template-columns: 1fr;
+   }
    .choseus__icons {
       grid-template-columns: repeat(1, 1fr);
       column-gap: 90px
