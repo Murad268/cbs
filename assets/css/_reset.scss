@@ -87,6 +87,11 @@ ul, ol {
 }
 
 .btn_withBg{
+   transition: 0.3s;
+   cursor: pointer;
+   &:hover {
+      background: var(--main-dark)
+   }
    display: flex;
    justify-content: center;
    align-items: center;
@@ -107,6 +112,7 @@ ul, ol {
 }
 
 .btn__withoutBg {
+   transition: 0.3s;
    transition: 0.4s;
    cursor: pointer;
    text-decoration: none;
