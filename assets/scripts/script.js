@@ -68,19 +68,23 @@ $('.us_chosen__slider__bottom .slick-slide').on('click', function () {
 })
 
 function openAccordion(triggerSelectors, contentSelectors) {
-	$(document).ready(function () {
-		$(triggerSelectors).click(function () {
-			var $this = $(this)
-			var content = $this.next(contentSelectors)
+  // Önceki tüm accordion içeriklerini kapalı konuma getiriyoruz
+  $(contentSelectors).hide();
 
-			// Digər accordion elementlərinin hündürlüyünü sıfıra təyin edirik
-			$(contentSelectors).not(content).slideUp()
+  // Tetikleyiciye tıklama olayı eklenir
+  $(triggerSelectors).click(function () {
+      var $this = $(this); // Tetikleyiciyi saklarız
+      var content = $this.next(contentSelectors); // Tetikleyiciye bağlı içeriği alırız
 
-			// Basılan accordion elementinin hündürlüyünü toggle edirik (açır və bağlayır)
-			content.slideToggle()
-		})
-	})
+      // Diğer accordion öğelerinin yüksekliğini sıfıra ayarlarız (kapalı konumda olmaları için)
+      $(contentSelectors).not(content).slideUp();
+
+      // Tıklanan accordion öğesinin yüksekliğini geçişli bir şekilde açar veya kapatır
+      content.slideToggle();
+  });
 }
+
+
 
 openAccordion(
 	'.service__bottom__accerdeon__main',
@@ -157,10 +161,46 @@ function openHamburgerMenuServices(triggerSelector, listSelector) {
   const trigger = document.querySelector(triggerSelector),
         list = document.querySelector(listSelector)
         const arrow = document.querySelector('.hamburger__down')
-  trigger.addEventListener('click', () => {
-    list.classList.toggle("active")
-    arrow.classList.toggle('active')
-  })
+      if(trigger && list) {
+        trigger.addEventListener('click', () => {
+          list.classList.toggle("active")
+          arrow.classList.toggle('active')
+        })
+      }
 }
 
 openHamburgerMenuServices('.hamburger__main__services', '.hamburger__main')
+
+
+
+const darkModeSelector = document.querySelector('.form-check-input')
+
+
+function toggleDarkMode() {
+  const isDark = localStorage.getItem('isDark')=="dark"?true:false
+  if (isDark) {
+      darkModeSelector.checked = true
+      document.body.classList.add("dark-mode__body")
+      document.body.classList.add("dark-mode__text")
+  } else {
+    darkModeSelector.checked = false
+    document.body.classList.remove("dark-mode__body")
+    document.body.classList.remove("dark-mode__text")
+  }
+}
+toggleDarkMode()
+
+
+
+
+
+darkModeSelector.addEventListener('change', (e) => {
+  if (darkModeSelector.checked) {
+    localStorage.setItem("isDark", 'dark')
+    toggleDarkMode()
+  } else {
+    localStorage.setItem("isDark", 'white')
+    toggleDarkMode()
+    basqaBirSey();
+  }
+});

@@ -625,11 +625,19 @@
                position: absolute;
                bottom: 69px;
                right: 111px;
+               @media(max-width: 600px) {
+                  bottom: 20px;
+                  right: 20px;
+               }
             }
             &__quote2 {
                position: absolute;
                top: 69px;
                left: 76px;
+               @media(max-width: 600px) {
+                  top: 20px;
+                  left: 20px;
+               }
             }
             span {
                max-width: 391px;

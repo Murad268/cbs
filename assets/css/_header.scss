@@ -31,7 +31,7 @@
    }}
    &__services {
       display: none;
-      top: 135px;
+      top: 125px;
       position: absolute;
       left: 0;
       width: 100%;
@@ -206,7 +206,7 @@
          margin-top: 0 !important;
       }
       .btn__withoutBg {
-         color: var(--main-dark) ;
+         color: var(--main-dark) !important;
          border-color   : var(--main-dark);
          display: flex;
          justify-content: center;
@@ -220,13 +220,13 @@
          align-items: center;
          column-gap: 30px;
          li.active {
-            color: var(--main-blue);
+            color: var(--main-blue) !important;
             a {
                color: var(--main-blue)
             }
          }
          li, a {
-            color: var(--main-dark);
+            color: var(--main-dark) !important;
             font-family: var(--gotham);
             font-size: 17px;
             font-style: normal;
@@ -236,7 +236,7 @@
             text-transform: capitalize;
             text-decoration: none;
             &:hover {
-               color: var(--main-blue)
+               color: var(--main-blue) !important
             }
             @media(max-width: 1230px) {
                font-size: 10px;
