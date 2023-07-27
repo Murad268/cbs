@@ -119,17 +119,20 @@ $('.recentPosts__slider').slick({
 function openHoverCursor(className, menuClass) {
   const menu = document.querySelector(menuClass);
   const links = document.querySelectorAll(className);
+  const arrow = document.querySelector('.nav__down')
 
   document.addEventListener('click', (e) => {
 
     if (!e.target.closest('.header__services')) {
       menu.classList.remove('active');
+      arrow.classList.remove('active')
     }
   });
 
   links.forEach((link) => {
     link.addEventListener('mouseover', (e) => {
       menu.classList.add('active');
+      arrow.classList.add('active')
     });
   });
 }
@@ -153,8 +156,10 @@ openHamburgerMenu(".header__hamburger", '.hamburger__menu')
 function openHamburgerMenuServices(triggerSelector, listSelector) {
   const trigger = document.querySelector(triggerSelector),
         list = document.querySelector(listSelector)
+        const arrow = document.querySelector('.hamburger__down')
   trigger.addEventListener('click', () => {
     list.classList.toggle("active")
+    arrow.classList.toggle('active')
   })
 }
 

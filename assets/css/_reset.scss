@@ -177,10 +177,21 @@ body {
    display: flex;
    align-items: center;
    column-gap: 8px;
+   .fa-angle-down {
+      &.active {
+         transition: 0.3s;
+         transform: rotate(180deg);
+      }
+   }
   
 }
 
 .hamburger__menu {
+   .hamburger__down {
+      &.active {
+         transform: rotate(180deg);
+      }
+   }
    a {
       &:hover {
          color: var(--main-white);
