@@ -8,6 +8,8 @@ a {
 }
 ul, ol {
    list-style-type: none;
+   padding-left: 0 !important;
+   margin: 0;
 }
 .container {
    max-width: 1160px;
@@ -22,6 +24,9 @@ ul, ol {
    font-weight: 700;
    line-height: normal;
    letter-spacing: 0.085px;
+   @media(max-width: 600px) {
+      font-size: 24px;
+   }
 }
 
 
@@ -43,6 +48,12 @@ ul, ol {
    font-style: normal;
    font-weight: 700;
    line-height: normal;
+   @media(max-width: 991px) {
+      font-size: 30px;
+   }
+   @media(max-width: 350px) {
+      font-size: 15px !important;
+   }
 }
 
 .card__title {
@@ -115,15 +126,7 @@ ul, ol {
    text-transform: uppercase;
 }
 
-.contact_-desc {
-   color: var(--main-dark);
-   font-family: var(--gotham);
-   font-size: 16px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 26px; 
-   letter-spacing: 0.32px;
-}
+
 
 .form-check-input {
    background-color: inherit !important;
@@ -131,8 +134,30 @@ ul, ol {
 }
 
 
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+ }
+
+ .main__main {
+   flex: 1;
+ }
+ 
+ footer {
+   flex-shrink: 0;
+ }
+
 @media(max-width: 1160px) {
    .container {
       padding: 0 20px 
+   }
+}
+
+
+@media(max-width: 500px) {
+   .header__top__right__links {
+      justify-content: center !important;
+      column-gap: 10px 
    }
 }
