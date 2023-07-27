@@ -45,6 +45,32 @@ $('.prev-button').click(() => {
  });
 
 
- var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 1,
+
+ $('.us_chosen__slider__top').slick({
+	infinite: true,
+	arrows: false,
+	dots: false,
+  asNavFor: '.us_chosen__slider__bottom',
+  appendDots: $('us_chosen__slider__bottom'),
+})
+
+
+$('.us_chosen__slider__bottom').slick({
+	infinite: true,
+	arrows: false,
+	dots: false,
+  slidesToShow: 5,
+  centerMode: true,
+  variableWidth: true,
+  asNavFor: '.us_chosen__slider__top',
+
+
+})
+
+
+$('.us_chosen__slider__bottom .slick-slide').on('click', function() {
+  var index = $(this).index();
+  $('.us_chosen__slider__top').slick('slickGoTo', index); // Slider 2'yi tıklanan dots'a göre konumlandırın
 });
+
+
