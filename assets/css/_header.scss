@@ -31,7 +31,6 @@
    }}
    &__services {
       display: none;
-     
       top: 135px;
       position: absolute;
       left: 0;
@@ -57,13 +56,33 @@
       }
    }
    &__hamburger {
+      z-index: 10;
       width: 24px;
       height: 20px;
       flex-shrink: 0;
       display: none;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
       cursor: pointer;
+      &.active {
+         padding-top: 10px;
+         span {
+            background: var(--main-white);
+         }
+         span:first-child {
+            transform: rotate(45deg)
+         }
+         span:nth-child(2) {
+            display: none;
+         }
+         span:last-child {
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 10px;
+            right: 0;
+         }
+      }
    span {
       display: block;
       height: 3px;
@@ -123,6 +142,10 @@
             }
 
             &__email {
+               cursor: pointer;
+               &:hover {
+                  color: var(--main-blue)
+               }
                color: var(--main-white);
                font-family: var(--gotham);
                font-size: 12px;
@@ -149,6 +172,10 @@
                margin-bottom: 0;
 
                li {
+                  &:hover {
+                     background: var(--main-blue);
+                     border: none
+                  }
                   border: 1px solid var(--main-white);
                   width: 20px;
                   height: 20px;
@@ -175,8 +202,11 @@
       padding-bottom: 20px;
       padding-top: 10px;
       background-color: var(--main-white);
+      @media(max-width: 991px) {
+         margin-top: 0 !important;
+      }
       .btn__withoutBg {
-         color: var(--main-dark) !important;
+         color: var(--main-dark) ;
          border-color   : var(--main-dark);
          display: flex;
          justify-content: center;

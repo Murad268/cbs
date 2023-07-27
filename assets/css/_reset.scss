@@ -107,6 +107,15 @@ ul, ol {
 }
 
 .btn__withoutBg {
+   transition: 0.4s;
+   cursor: pointer;
+   text-decoration: none;
+   &:hover {
+      background: var(--main-blue);
+      border: none;
+      color: var(--main-white) !important;
+      font-weight: bold;
+   }
    display: flex;
    justify-content: center;
    align-items: center;
@@ -169,4 +178,82 @@ body {
    align-items: center;
    column-gap: 8px;
   
+}
+
+.hamburger__menu {
+   a {
+      &:hover {
+         color: var(--main-white);
+         text-decoration: underline;
+      }
+   }
+   .hamburger__main {
+      height: 50px;
+      overflow: hidden;
+
+      &__services {
+         cursor: pointer;
+         
+      }
+      &.active {
+         height: max-content;
+      }
+   }
+   &__services {
+    
+      margin-top: 20px;
+      li {
+         border: none !important;
+         padding-bottom: 10px !important;
+      
+      }
+   }
+   &__contact {
+      display: flex;
+      column-gap: 10px
+   }
+   display: none;
+   &.active {
+      display: block;
+   }
+   &__contacts {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      margin-top: 40px;
+      color: var(--main-white);
+      font-family: var(--gotham);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 350;
+      line-height: normal;
+      letter-spacing: 0.03px;
+   }
+   position: fixed;
+   background: var(--desc-color);
+   width: 100%;
+   padding: 20px 0;
+   padding-left: 10px;
+   padding-right: 10px;
+   height: 100vh;
+   padding-top: 55px;
+   .btn_withBg {
+      width: 100% !important;
+      cursor: pointer;
+   }
+   li {
+      margin-bottom: 20px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--main-white);
+   }
+   a, li {
+      color: var(--main-white);
+      font-family: var(--gotham);
+      text-decoration: none;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.03px;
+   }
 }

@@ -137,3 +137,25 @@ function openHoverCursor(className, menuClass) {
 openHoverCursor('.our__services span', '.header__services');
 
 
+function openHamburgerMenu (triggerSelector, menuSelector) {
+  const header__hamburger = document.querySelector(triggerSelector),
+        menu = document.querySelector(menuSelector);
+
+  header__hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    header__hamburger.classList.toggle("active")
+  })
+}
+
+openHamburgerMenu(".header__hamburger", '.hamburger__menu')
+
+
+function openHamburgerMenuServices(triggerSelector, listSelector) {
+  const trigger = document.querySelector(triggerSelector),
+        list = document.querySelector(listSelector)
+  trigger.addEventListener('click', () => {
+    list.classList.toggle("active")
+  })
+}
+
+openHamburgerMenuServices('.hamburger__main__services', '.hamburger__main')
