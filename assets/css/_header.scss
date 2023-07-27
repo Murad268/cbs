@@ -1,5 +1,61 @@
 
 .header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1111;
+   &__service {
+      padding: 0 16px;
+      border: 1px solid var(--main-white);
+
+      padding-top: 24px;
+      padding-bottom: 60px;
+      &__top {
+         a {
+            color: var(--main-white);
+            font-family: var(--gotham);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.03px;
+      
+      
+            text-decoration: none;
+         }
+         text-align: center;
+         padding-bottom: 15px;
+         margin-bottom: 15px;
+         border-bottom: 1px solid var(--main-white)
+   }}
+   &__services {
+      display: none;
+     
+      top: 135px;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background: var(--main-dark);
+      grid-template-columns: repeat(5, 1fr);
+      &.active {
+         display: grid;
+      }
+      ul{
+         padding: 0 16px;
+         li {
+            color: var(--main-white);
+            text-align: center;
+            font-family: var(--main-white);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.03px;
+            margin-bottom: 15px;
+         }
+      }
+   }
    &__hamburger {
       width: 24px;
       height: 20px;
@@ -116,6 +172,9 @@
    }
 
    &__navbar {
+      padding-bottom: 20px;
+      padding-top: 10px;
+      background-color: var(--main-white);
       .btn__withoutBg {
          color: var(--main-dark) !important;
          border-color   : var(--main-dark);
@@ -146,7 +205,9 @@
             letter-spacing: 0.17px;
             text-transform: capitalize;
             text-decoration: none;
-        
+            &:hover {
+               color: var(--main-blue)
+            }
             @media(max-width: 1230px) {
                font-size: 10px;
             }
@@ -198,7 +259,7 @@
       }
       &__navbar {
          margin-top: 10px;
-         padding-bottom: 10px;
+         padding-bottom: 20px;
       }
    }
 
