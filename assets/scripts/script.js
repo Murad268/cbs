@@ -94,3 +94,39 @@ function openAccordion(triggerSelectors, contentSelectors) {
 }
 
 openAccordion(".service__bottom__accerdeon__main", '.service__bottom__accerdeon__content')
+
+
+
+$('.recentPosts__slider').slick({
+	infinite: true,
+	arrows: false,
+   slidesToShow: 3,
+	dots: false,
+   slidesToScroll: 1,
+   responsive: [
+      {
+         breakpoint: 1220, 
+         settings: {
+           slidesToShow: 3,
+       
+         }
+         
+       },
+       {
+         breakpoint: 810, 
+         settings: {
+           slidesToShow: 2,
+    
+         }
+         
+       },
+       {
+         breakpoint: 600, 
+         settings: {
+           slidesToShow: 1,
+           arrows: false
+         }
+         
+       },
+   ]
+})
