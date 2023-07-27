@@ -528,6 +528,9 @@
 
 .us_chosen {
    padding-top: 84px;
+   @media(max-width: 768px) {
+      padding-top: 30px;
+   }
    &__wrapper {
     display: flex;
     margin-top: 69px;
