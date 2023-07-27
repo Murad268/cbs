@@ -100,7 +100,9 @@
                   display: flex;
                   justify-content: center;
                   align-items: center;
-
+                  a {
+                     text-decoration: none;
+                  }
                   i {
                      color: var(--main-white);
                      font-size: 10px;
