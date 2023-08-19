@@ -278,6 +278,12 @@ body {
 
 
 .dark-mode__body {
+   .our__services {
+      color: var(--main-white) !important;
+      span {
+         color: var(--main-white) !important;
+      }
+   }
    .header__top {
       background: var(--main-white) !important;
       *{
@@ -315,14 +321,14 @@ body {
       border-color: var(--main-white) !important
    }
    .our__services {
-      span, i {
+       i {
          color: var(--main-dark) !important
       }
    }
    .digital__desc {
       background-color: var(--main-dark) !important;
    }
-   .footer__logo {
+   .footer__logo, .header__navbar__logo {
       img {
          filter: invert(1);
       }
